@@ -1,1 +1,1 @@
-/usr/bin/cc -g   CMakeFiles/cTranslator.dir/main.c.o CMakeFiles/cTranslator.dir/c_encapsulation_defs.c.o  -o cTranslator 
+/usr/bin/cc -g   CMakeFiles/cTranslator.dir/main.c.o CMakeFiles/cTranslator.dir/c_encapsulation_defs.c.o CMakeFiles/cTranslator.dir/c_inheritance_defs.c.o  -o cTranslator 

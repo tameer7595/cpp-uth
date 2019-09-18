@@ -2,6 +2,7 @@
 #ifndef CTRANSLATOR_C_ENCAPSULATION_DEFS_H
 #define CTRANSLATOR_C_ENCAPSULATION_DEFS_H
 
+
 typedef enum {
     FALSE, TRUE
 } bool;
@@ -41,7 +42,7 @@ bool operator_not_equal(Box *const lhs, Box *const rhs);
 /*********************************shelf***************************************/
 
 static const char* const DEF_MSG= "The total volume held on the shelf is";
-static const char* message = "The total volume held on the shelf is";
+
 typedef struct Shelf {
     Box boxes[3];
 }Shelf;
@@ -56,6 +57,6 @@ void printSB(const Shelf *const);
 
 int getNumBoxes();
 
-void setMessage(const char* msg);
+
 
 #endif /*CTRANSLATOR_C_ENCAPSULATION_DEFS_H*/

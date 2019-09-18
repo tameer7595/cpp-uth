@@ -150,6 +150,33 @@ c_encapsulation_defs.c.s:
 	$(MAKE) -f CMakeFiles/cTranslator.dir/build.make CMakeFiles/cTranslator.dir/c_encapsulation_defs.c.s
 .PHONY : c_encapsulation_defs.c.s
 
+c_inheritance_defs.o: c_inheritance_defs.c.o
+
+.PHONY : c_inheritance_defs.o
+
+# target to build an object file
+c_inheritance_defs.c.o:
+	$(MAKE) -f CMakeFiles/cTranslator.dir/build.make CMakeFiles/cTranslator.dir/c_inheritance_defs.c.o
+.PHONY : c_inheritance_defs.c.o
+
+c_inheritance_defs.i: c_inheritance_defs.c.i
+
+.PHONY : c_inheritance_defs.i
+
+# target to preprocess a source file
+c_inheritance_defs.c.i:
+	$(MAKE) -f CMakeFiles/cTranslator.dir/build.make CMakeFiles/cTranslator.dir/c_inheritance_defs.c.i
+.PHONY : c_inheritance_defs.c.i
+
+c_inheritance_defs.s: c_inheritance_defs.c.s
+
+.PHONY : c_inheritance_defs.s
+
+# target to generate assembly for a file
+c_inheritance_defs.c.s:
+	$(MAKE) -f CMakeFiles/cTranslator.dir/build.make CMakeFiles/cTranslator.dir/c_inheritance_defs.c.s
+.PHONY : c_inheritance_defs.c.s
+
 main.o: main.c.o
 
 .PHONY : main.o
@@ -189,6 +216,9 @@ help:
 	@echo "... c_encapsulation_defs.o"
 	@echo "... c_encapsulation_defs.i"
 	@echo "... c_encapsulation_defs.s"
+	@echo "... c_inheritance_defs.o"
+	@echo "... c_inheritance_defs.i"
+	@echo "... c_inheritance_defs.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

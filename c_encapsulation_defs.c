@@ -3,6 +3,7 @@
 
 #include<stdio.h>
 #include "c_encapsulation_defs.h"
+const char* message = "The total volume held on the shelf is";
 
 void Box_ctor_d(Box *this, double dim) {
     this->length = this->height = this->width = dim;
@@ -100,9 +101,5 @@ int getNumBoxes(Shelf* const this)
     return 3;
 }
 
-void setMessage(const char* msg)
-{
-    message = msg;
-}
 
 

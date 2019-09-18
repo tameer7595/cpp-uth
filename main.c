@@ -1,7 +1,9 @@
 #include <stdio.h>
 
 #include "c_encapsulation_defs.h"
+#include "c_inheritance_defs.h"
 
+extern  const char* message;
 static int thisfuncalled = 0;
 static int thatfuncalled = 0;
 static Box box99;
@@ -76,7 +78,6 @@ void doBoxes()
     Box_dtor(&b1);
 }
 
-
 void doShelves()
 {
     Box aBox;
@@ -109,8 +110,7 @@ void doShelves()
     Shelf_dtor(&aShelf);
 }
 
-int main()
-{
+void phaseone(){
     Box_ctor_ddd(&largeBox,10,20,30);
     printf("\n--- Start main() ---\n\n");
 
@@ -127,7 +127,101 @@ int main()
         Box_dtor(&box99);
     if(thatfuncalled)
         Box_dtor(&box88);
-    Box_dtor(&largeBox);
+    Box_dtor(&largeBox);}
+
+void doMaterials()
+{
+    /*Material_t mat1;*/
+    Material_t mat2;
+    Materials mat;
+    struct MatTest { Materials mat; Material_t mat_t; };
+    printf("\n--- Start doMaterials() ---\n\n");
+
+
+    printf("Size of Materials: %lu\n", sizeof(Materials));
+    printf("Size of mat: %lu\n", sizeof(mat));
+    printf("Size of Materials::Types: %lu\n", sizeof(Types));
+    printf("Size of Material_t: %lu\n", sizeof(Material_t));
+
+    printf("Size of Materials + Material_t: %lu\n", sizeof(struct MatTest));
+
+    Material_ctor_t(&mat2,METAL);
+    getName(mat2.material);
+    printf("\n--- End doMaterials() ---\n\n");
+}
+
+void doPhysicalBox()
+{
+    PhysicalBox pb1;
+    PhysicalBox pb2;
+    PhysicalBox pb3;
+    PhysicalBox pb4;
+    printf("\n--- Start doPhysicalBox() ---\n\n");
+
+    PhysicalBox_ctor_dddT(&pb1,8, 6, 4,PLASTIC);
+    PhysicalBox_ctor_t(&pb2,WOOD);
+    PhysicalBox_ctor_dddT(&pb3,7, 7, 7,OTHER);
+    printf("\npb4 is copy-constructed from pb1\n");
+    pb4 = pb1;
+    printp(&pb4);
+    printp(&pb1);
+    printf("pb4 %s pb1\n", ((const Box* const)&pb1 == (const Box* const)&pb4) && (pb1.material.material == pb4.material.material)? "equals" : "does not equal");
+
+    printf("\npb4 is copy-assigned from pb3\n");
+    pb4 = pb3;
+    printp(&pb4);
+    printp(&pb3);
+    printf("pb4 %s pb3\n",((const Box* const)&pb4 == (const Box* const)&pb3) && (pb4.material.material == pb3.material.material)? "equals" : "does not equal");
+
+    printf("\n--- End doPhysicalBox() ---\n\n");
+}
+
+void doWeightBox()
+{
+    WeightBox pw1;
+    WeightBox pw2;
+    WeightBox pw3;
+    WeightBox pw4;
+    printf("\n--- Start doWeightBox() ---\n\n");
+
+    WeightBox_ctor_dddd(&pw1,8, 6, 4, 25);
+    WeightBox_ctor_dddd(&pw2,1, 2, 3,0);
+    WeightBox_ctor_dddd(&pw3,10, 20, 30, 15);
+
+    printf("\npw4 is copy-constructed from pw1\n");
+    pw4 = pw1;
+    printw(&pw4);
+    printw(&pw1);
+    printf("pw4 %s pw1\n", ((const Box* const)&pw1 == (const Box* const)&pw4) && (pw1.weight == pw4.weight)?  "equals" : "does not equal");
+
+    printf("\npw4 is copy-assigned from pw3\n");
+    pw4 = pw3;
+    printw(&pw4);
+    printw(&pw3);
+    printf("pw4 %s pw3\n",((const Box* const)&pw4 == (const Box* const)&pw3) && (pw4.weight == pw3.weight)? "equals" : "does not equal");
+
+    printf("\n--- End doWeightBox() ---\n\n");
+}
+
+
+int main()
+{
+    printf("\n--- Start phase1() ---\n\n");
+
+    phaseone();
+
+    printf("\n--- End phase1() ---\n\n");
+
+    printf("\n--- Start main() ---\n\n");
+
+    doMaterials();
+
+    doPhysicalBox();
+
+    doWeightBox();
+
+    printf("\n--- End main() ---\n\n");
+
     return 0;
 }
 
