@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/tameer/CLionProjects/cTranslator/c_encapsulation_defs.c
+stdio.h
+-
+c_encapsulation_defs.h
+/home/tameer/CLionProjects/cTranslator/c_encapsulation_defs.h
+
+/home/tameer/CLionProjects/cTranslator/c_encapsulation_defs.h
+
+/home/tameer/CLionProjects/cTranslator/main.c
+stdio.h
+-
+c_encapsulation_defs.h
+/home/tameer/CLionProjects/cTranslator/c_encapsulation_defs.h
+

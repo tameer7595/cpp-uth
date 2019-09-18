@@ -1,0 +1,3 @@
+/home/tameer/CLionProjects/cTranslator/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/tameer/CLionProjects/cTranslator/cmake-build-debug/CMakeFiles/cTranslator.dir
+/home/tameer/CLionProjects/cTranslator/cmake-build-debug/CMakeFiles/edit_cache.dir
