@@ -13,6 +13,7 @@ void Box_ctor_ddd(Box *this, double l, double w, double h) {
     this->length = l;
     this->width = w;
     this->height = h;
+    printBB(this);
 }
 
 void Box_dtor(Box *this) {

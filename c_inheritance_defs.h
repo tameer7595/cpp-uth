@@ -15,7 +15,7 @@ typedef enum
 }Types;
 
 typedef struct {
-    char A;
+    char __reversed__;/*unused variable*/
 }Materials;
 
 /*
@@ -23,11 +23,6 @@ void Materials_ctor(Materials *this,Types type){
     this->type = type;
 }*/
 
-static const char* getName(Types type)
-{
-    const char* const names[] = { "Plastic", "Metal", "Wood", "Paper", "Other" };
-    return names[type];
-}
 
 typedef struct Material_t{
 
@@ -36,7 +31,7 @@ typedef struct Material_t{
 const char* name(const Material_t* const this);
 
 /*default value is OTHER*/
-void Material_ctor_t(Material_t *this,Types mat );
+void Material_ctor_t(Material_t* const this,Types mat );
 
 
 /************************ PhysicalBox**********************************/
@@ -46,10 +41,10 @@ typedef struct PhysicalBox{
     Box base_c;
 }PhysicalBox;
 
-void PhysicalBox_ctor_ddd(PhysicalBox *this,double l, double w, double h);
-void PhysicalBox_ctor_dddT(PhysicalBox *this,double l, double w, double h, Types t);
-void PhysicalBox_ctor_t(PhysicalBox *this,Types t);
-void PhysicalBox_dtor(PhysicalBox *this);
+void PhysicalBox_ctor_ddd(PhysicalBox* const this,double l, double w, double h);
+void PhysicalBox_ctor_dddT(PhysicalBox* const this,double l, double w, double h, Types t);
+void PhysicalBox_ctor_t(PhysicalBox* const this,Types t);
+void PhysicalBox_dtor(PhysicalBox* const this);
 void printp(const PhysicalBox *const this);
 
 /*inline Materials::Types PhysicalBox::getMaterial() const
@@ -75,10 +70,11 @@ typedef struct WeightBox{
     Box base_c;
 }WeightBox;
 
-void WeightBox_ctor_dddd(WeightBox *this,double l, double w, double h, double wgt );
-void WeightBox_cpyctor(WeightBox* this,WeightBox* const other);
-void WeightBox_dtor(WeightBox* this);
+void WeightBox_ctor_dddd(WeightBox* const this,double l, double w, double h, double wgt );
+void WeightBox_cpyctor(WeightBox* const this,WeightBox* const other);
+void WeightBox_dtor(WeightBox* const this);
 void printw(const WeightBox *const this);
+WeightBox* const operatorA(WeightBox* this,const WeightBox* const other);
 #endif /*CTRANSLATOR_C_INHERITANCE_DEFS_H*/
 
 

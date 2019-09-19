@@ -4,6 +4,7 @@
 #include "c_inheritance_defs.h"
 
 extern  const char* message;
+extern const char* getName(Types type);
 static int thisfuncalled = 0;
 static int thatfuncalled = 0;
 static Box box99;
@@ -146,7 +147,7 @@ void doMaterials()
     printf("Size of Materials + Material_t: %lu\n", sizeof(struct MatTest));
 
     Material_ctor_t(&mat2,METAL);
-    getName(mat2.material);
+
     printf("\n--- End doMaterials() ---\n\n");
 }
 
@@ -165,15 +166,18 @@ void doPhysicalBox()
     pb4 = pb1;
     printp(&pb4);
     printp(&pb1);
-    printf("pb4 %s pb1\n", ((const Box* const)&pb1 == (const Box* const)&pb4) && (pb1.material.material == pb4.material.material)? "equals" : "does not equal");
-
+    printf("pb4 %s pb1\n", (operator_equals((Box* const )&pb1 ,(Box* const )&pb4)) && (pb1.material.material == pb4.material.material)? "equals" : "does not equal");
     printf("\npb4 is copy-assigned from pb3\n");
     pb4 = pb3;
     printp(&pb4);
     printp(&pb3);
-    printf("pb4 %s pb3\n",((const Box* const)&pb4 == (const Box* const)&pb3) && (pb4.material.material == pb3.material.material)? "equals" : "does not equal");
+    printf("pb4 %s pb3\n",(operator_equals((Box* const )&pb4 ,(Box* const )&pb3)) && (pb4.material.material == pb3.material.material)? "equals" : "does not equal");
 
     printf("\n--- End doPhysicalBox() ---\n\n");
+    PhysicalBox_dtor(&pb4);
+    PhysicalBox_dtor(&pb3);
+    PhysicalBox_dtor(&pb2);
+    PhysicalBox_dtor(&pb1);
 }
 
 void doWeightBox()
@@ -189,18 +193,24 @@ void doWeightBox()
     WeightBox_ctor_dddd(&pw3,10, 20, 30, 15);
 
     printf("\npw4 is copy-constructed from pw1\n");
-    pw4 = pw1;
+    /*pw4 = pw1;*/
+    WeightBox_cpyctor(&pw4,&pw1);
     printw(&pw4);
     printw(&pw1);
     printf("pw4 %s pw1\n", ((const Box* const)&pw1 == (const Box* const)&pw4) && (pw1.weight == pw4.weight)?  "equals" : "does not equal");
 
     printf("\npw4 is copy-assigned from pw3\n");
-    pw4 = pw3;
+
+    operatorA(&pw4,&pw3);
     printw(&pw4);
     printw(&pw3);
     printf("pw4 %s pw3\n",((const Box* const)&pw4 == (const Box* const)&pw3) && (pw4.weight == pw3.weight)? "equals" : "does not equal");
 
     printf("\n--- End doWeightBox() ---\n\n");
+    WeightBox_dtor(&pw4);
+    WeightBox_dtor(&pw3);
+    WeightBox_dtor(&pw2);
+    WeightBox_dtor(&pw1);
 }
 
 
