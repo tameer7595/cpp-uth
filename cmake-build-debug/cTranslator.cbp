@@ -90,6 +90,12 @@
 		<Unit filename="/home/tameer/CLionProjects/cTranslator/c_inheritance_defs.h">
 			<Option target="cTranslator"/>
 		</Unit>
+		<Unit filename="/home/tameer/CLionProjects/cTranslator/c_polymorphism_defs.c">
+			<Option target="cTranslator"/>
+		</Unit>
+		<Unit filename="/home/tameer/CLionProjects/cTranslator/c_polymorphism_defs.h">
+			<Option target="cTranslator"/>
+		</Unit>
 		<Unit filename="/home/tameer/CLionProjects/cTranslator/main.c">
 			<Option target="cTranslator"/>
 		</Unit>

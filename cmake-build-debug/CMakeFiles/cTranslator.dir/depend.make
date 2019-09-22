@@ -8,6 +8,9 @@ CMakeFiles/cTranslator.dir/c_inheritance_defs.c.o: ../c_encapsulation_defs.h
 CMakeFiles/cTranslator.dir/c_inheritance_defs.c.o: ../c_inheritance_defs.c
 CMakeFiles/cTranslator.dir/c_inheritance_defs.c.o: ../c_inheritance_defs.h
 
+CMakeFiles/cTranslator.dir/c_polymorphism_defs.c.o: ../c_polymorphism_defs.c
+CMakeFiles/cTranslator.dir/c_polymorphism_defs.c.o: ../c_polymorphism_defs.h
+
 CMakeFiles/cTranslator.dir/main.c.o: ../c_encapsulation_defs.h
 CMakeFiles/cTranslator.dir/main.c.o: ../c_inheritance_defs.h
 CMakeFiles/cTranslator.dir/main.c.o: ../main.c

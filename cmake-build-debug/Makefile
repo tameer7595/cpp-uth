@@ -177,6 +177,33 @@ c_inheritance_defs.c.s:
 	$(MAKE) -f CMakeFiles/cTranslator.dir/build.make CMakeFiles/cTranslator.dir/c_inheritance_defs.c.s
 .PHONY : c_inheritance_defs.c.s
 
+c_polymorphism_defs.o: c_polymorphism_defs.c.o
+
+.PHONY : c_polymorphism_defs.o
+
+# target to build an object file
+c_polymorphism_defs.c.o:
+	$(MAKE) -f CMakeFiles/cTranslator.dir/build.make CMakeFiles/cTranslator.dir/c_polymorphism_defs.c.o
+.PHONY : c_polymorphism_defs.c.o
+
+c_polymorphism_defs.i: c_polymorphism_defs.c.i
+
+.PHONY : c_polymorphism_defs.i
+
+# target to preprocess a source file
+c_polymorphism_defs.c.i:
+	$(MAKE) -f CMakeFiles/cTranslator.dir/build.make CMakeFiles/cTranslator.dir/c_polymorphism_defs.c.i
+.PHONY : c_polymorphism_defs.c.i
+
+c_polymorphism_defs.s: c_polymorphism_defs.c.s
+
+.PHONY : c_polymorphism_defs.s
+
+# target to generate assembly for a file
+c_polymorphism_defs.c.s:
+	$(MAKE) -f CMakeFiles/cTranslator.dir/build.make CMakeFiles/cTranslator.dir/c_polymorphism_defs.c.s
+.PHONY : c_polymorphism_defs.c.s
+
 main.o: main.c.o
 
 .PHONY : main.o
@@ -219,6 +246,9 @@ help:
 	@echo "... c_inheritance_defs.o"
 	@echo "... c_inheritance_defs.i"
 	@echo "... c_inheritance_defs.s"
+	@echo "... c_polymorphism_defs.o"
+	@echo "... c_polymorphism_defs.i"
+	@echo "... c_polymorphism_defs.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

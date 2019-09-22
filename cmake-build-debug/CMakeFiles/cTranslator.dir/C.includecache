@@ -6,23 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/home/tameer/CLionProjects/cTranslator/c_encapsulation_defs.h
-
-/home/tameer/CLionProjects/cTranslator/c_inheritance_defs.c
-c_inheritance_defs.h
-/home/tameer/CLionProjects/cTranslator/c_inheritance_defs.h
-
-/home/tameer/CLionProjects/cTranslator/c_inheritance_defs.h
+/home/tameer/CLionProjects/cTranslator/c_polymorphism_defs.c
 stdio.h
 -
-c_encapsulation_defs.h
-/home/tameer/CLionProjects/cTranslator/c_encapsulation_defs.h
-
-/home/tameer/CLionProjects/cTranslator/main.c
-stdio.h
+stdlib.h
 -
-c_encapsulation_defs.h
-/home/tameer/CLionProjects/cTranslator/c_encapsulation_defs.h
-c_inheritance_defs.h
-/home/tameer/CLionProjects/cTranslator/c_inheritance_defs.h
+c_polymorphism_defs.h
+/home/tameer/CLionProjects/cTranslator/c_polymorphism_defs.h
+
+/home/tameer/CLionProjects/cTranslator/c_polymorphism_defs.h
 
